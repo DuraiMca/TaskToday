@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "240018970740",
+    "project_id": "tasktoday-ca9e6",
+    "storage_bucket": "tasktoday-ca9e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240018970740:android:276f0ebed6128cfa27d921",
+        "android_client_info": {
+          "package_name": "com.example.tasktoday"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "240018970740-9k48v05easo7ucfcumg6fgpjin5abimk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAr9ujoH6iOZT356zDFK9shux5XyXD3ocQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "240018970740-9k48v05easo7ucfcumg6fgpjin5abimk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "240018970740-fj2kfku6evc2us12o5io6ouqnb4cvn81.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tasktoday"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

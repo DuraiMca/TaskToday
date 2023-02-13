@@ -18,44 +18,26 @@ class _UsersDataState extends State<UsersData> {
   final DatabaseReference dbr =
       FirebaseDatabase.instance.ref(FirebaseAuth.instance.currentUser!.uid);
   dynamic? data;
-List<Object?>workshopList = [];
-
+  List<Object?> workshopList = [];
 
   @override
   void initState() {
     super.initState();
-    
   }
-
-   
-  
 
   @override
   Widget build(BuildContext context) {
     dbr.onChildAdded.forEach((element) {
-      data=element.snapshot.child("tasks").value;
-  List<Object?> values =data ;
-         values?.forEach((element) {
-           
-             final json = element as Map<dynamic, dynamic>;
+      data = element.snapshot.child("tasks").value;
+      List<Object?> values = data;
+      values?.forEach((element) {
+        final json = element as Map<dynamic, dynamic>;
         final message = Tasks.fromJson(json);
 
-
         print(message.tasks);
-       
-                });
-       
-           });
-       
-          
-          
-           
-           
-         
-       return Text("");
-         
-        
-}
-}
+      });
+    });
 
-
+    return Text("");
+  }
+}

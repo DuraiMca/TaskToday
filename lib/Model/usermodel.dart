@@ -23,8 +23,8 @@ class Tasks {
     time = json['time'];
   }
 
-  Map<dynamic, dynamic> toJson() {
-    final Map<dynamic, dynamic> data =  Map<dynamic, dynamic>();
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['date'] = this.date;
     data['email'] = this.email;
     data['priority'] = this.priority;
@@ -33,4 +33,14 @@ class Tasks {
     data['time'] = this.time;
     return data;
   }
+}
+
+class Category {
+  final String categoryImage;
+  final String categoryTitle;
+
+  Category(
+    this.categoryImage,
+    this.categoryTitle,
+  );
 }

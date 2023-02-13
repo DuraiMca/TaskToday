@@ -24,32 +24,34 @@ class _UsersDataState extends State<UsersData> {
   void initState() {
     super.initState();
     dbr.onChildAdded.forEach((element) {
-      this.setState(() {
-        data = element.snapshot.value;;
-        Map<TaskData, dynamic> castedData = data
-            .map((key, value) => MapEntry(key.toString(), value as dynamic));
-        
-        castedData.forEach((key, value) {
+      setState(() {
+        data = element.snapshot.value;
+        print(data);
+        print("===============================");
+        print("11111111111111111111111111111");
+        // print(element.snapshot.child('tasks').value);
+        print("2222222222222222222222222222");
 
-            Map<String, dynamic> map = {
-  'id': key,
-  'tasks': value
-};
-List<String> keys = map.keys.toList();
-List<dynamic> values = map.values.toList();
+        //Map<String, dynamic> map = element.snapshot.value as Map<String, dynamic>;
+        final value = jsonDecode(jsonEncode(element.snapshot.value));
 
-  print(values);
-        
-  
-        }); 
-        
+        Map<String, dynamic> map = value;
+        print("VALUE :");
+        print(value);
+
+        print(map.keys.toList().first);
+        print('tasks : ====');
+        print(map.entries.elementAt(0).value);
+        print('KEY & VALUES : ====');
+        for (var kv in map.entries) {
+          print(kv.value);
+        }
       });
     });
   }
 
   @override
   Widget build(BuildContext context) {
-
     return const Text("");
   }
 }

@@ -1,10 +1,10 @@
 class Task {
-  final String ?email;
-  final String ?status;
-  final String ?date;
-  final String ?time;
-  final String ?priority;
-  final String ?task;
+  final String? email;
+  final String? status;
+  final String? date;
+  final String? time;
+  final String? priority;
+  final String? task;
 
   Task({
     this.email,
@@ -28,8 +28,8 @@ class Task {
 }
 
 class TaskData {
-  final String ?id;
-  final List<Task> ?tasks;
+  final String? id;
+  final List<Task>? tasks;
 
   TaskData({
     this.id,
@@ -39,10 +39,20 @@ class TaskData {
   factory TaskData.fromJson(Map<String, dynamic> json) {
     var list = json['tasks'] as List;
     List<Task> tasksList = list.map((i) => Task.fromJson(i)).toList();
-   
+
     return TaskData(
       id: json['id'],
       tasks: tasksList,
     );
   }
+}
+
+class Category {
+  final String categoryImage;
+  final String categoryTitle;
+
+  Category(
+    this.categoryImage,
+    this.categoryTitle,
+  );
 }

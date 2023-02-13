@@ -27,6 +27,7 @@ class _UsersDataState extends State<UsersData> {
         
        data=element.snapshot.child("tasks").value; 
         print(data);
+    });
 //         Map<Tasks, dynamic> castedData = data
 //             .map((key, value) => MapEntry(key.toString(), value as dynamic));
         
@@ -42,9 +43,11 @@ class _UsersDataState extends State<UsersData> {
     
         
 //     });
-//   });
-    });
-  } 
+    
+  
+  }
+
+   
   
 
   @override
@@ -52,5 +55,5 @@ class _UsersDataState extends State<UsersData> {
    
     return const Text("");
   }
-    }
-  
+    
+  }

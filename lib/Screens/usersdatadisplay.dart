@@ -18,19 +18,17 @@ class _UsersDataState extends State<UsersData> {
   final DatabaseReference dbr =
       FirebaseDatabase.instance.ref(FirebaseAuth.instance.currentUser!.uid);
   dynamic data;
- 
 
   @override
   void initState() {
     super.initState();
     dbr.onChildAdded.forEach((element) {
-        
-       data=element.snapshot.child("tasks").value; 
-        print(data);
+      data = element.snapshot.child("tasks").value;
+      print(data);
     });
 //         Map<Tasks, dynamic> castedData = data
 //             .map((key, value) => MapEntry(key.toString(), value as dynamic));
-        
+
 //         castedData.forEach((key, value) {
 
 //             Map<String, dynamic> map = {
@@ -39,21 +37,12 @@ class _UsersDataState extends State<UsersData> {
 // };
 // List<String> keys = map.keys.toList();
 // List<dynamic> values = map.values.toList();
-     
-    
-        
-//     });
-    
-  
-  }
 
-   
-  
+//     });
+  }
 
   @override
   Widget build(BuildContext context) {
-   
     return const Text("");
   }
-    
-  }
+}

@@ -24,7 +24,7 @@ class Tasks {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  Map<String, dynamic>();
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['date'] = this.date;
     data['email'] = this.email;
     data['priority'] = this.priority;

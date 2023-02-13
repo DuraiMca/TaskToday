@@ -1,48 +1,36 @@
-class Task {
-  final String ?email;
-  final String ?status;
-  final String ?date;
-  final String ?time;
-  final String ?priority;
-  final String ?task;
+class Tasks {
+  String? date;
+  String? email;
+  String? priority;
+  String? status;
+  String? tasks;
+  String? time;
 
-  Task({
-    this.email,
-    this.status,
-    this.date,
-    this.time,
-    this.priority,
-    this.task,
-  });
+  Tasks(
+      {this.date,
+      this.email,
+      this.priority,
+      this.status,
+      this.tasks,
+      this.time});
 
-  factory Task.fromJson(Map<String, dynamic> json) {
-    return Task(
-      email: json['email'],
-      status: json['status'],
-      date: json['date'],
-      time: json['time'],
-      priority: json['priority'],
-      task: json['task'],
-    );
+  Tasks.fromJson(Map<String, dynamic> json) {
+    date = json['date'];
+    email = json['email'];
+    priority = json['priority'];
+    status = json['status'];
+    tasks = json['tasks'];
+    time = json['time'];
   }
-}
 
-class TaskData {
-  final String ?id;
-  final List<Task> ?tasks;
-
-  TaskData({
-    this.id,
-    this.tasks,
-  });
-
-  factory TaskData.fromJson(Map<String, dynamic> json) {
-    var list = json['tasks'] as List;
-    List<Task> tasksList = list.map((i) => Task.fromJson(i)).toList();
-   
-    return TaskData(
-      id: json['id'],
-      tasks: tasksList,
-    );
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data =  Map<String, dynamic>();
+    data['date'] = this.date;
+    data['email'] = this.email;
+    data['priority'] = this.priority;
+    data['status'] = this.status;
+    data['tasks'] = this.tasks;
+    data['time'] = this.time;
+    return data;
   }
 }

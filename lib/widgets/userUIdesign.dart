@@ -23,7 +23,9 @@ class _UserUIDesignState extends State<UserUIDesign> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return  SingleChildScrollView( 
+    
+    child:Column(
       children: [
         SizedBox(
               height: MediaQuery.of(context).size.height / 2.0,
@@ -79,11 +81,13 @@ class _UserUIDesignState extends State<UserUIDesign> {
               ),
                
             ),
-            // SizedBox(
-            //    height: 50,
-            //   child:  UsersData()),
+           
+            SizedBox(
+             
+          child:  UsersData()),
             
       ],
+    )
     );
 }
 }
@@ -97,7 +101,7 @@ void addUserTasks(userTask,userPriorityText,userDateText,userTimeText) async{
    DatabaseReference ref =
       FirebaseDatabase.instance.ref(FirebaseAuth.instance.currentUser!.uid);
 
-   ref.child(FirebaseAuth.instance.currentUser!.uid).push().set({
+   ref.push().set({
      
 	    "tasks":[
 	    	{
@@ -114,3 +118,5 @@ void addUserTasks(userTask,userPriorityText,userDateText,userTimeText) async{
 
    });
 }
+
+

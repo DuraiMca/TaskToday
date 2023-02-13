@@ -5,7 +5,7 @@ import '../Model/usermodel.dart';
 class ExploreListItemView extends StatefulWidget {
   int index;
 
-  List<Category> itemList;
+  List<Tasks> itemList;
 
   ExploreListItemView(this.itemList, this.index, {super.key});
 
@@ -14,7 +14,7 @@ class ExploreListItemView extends StatefulWidget {
 }
 
 class ExploreItemView extends State<ExploreListItemView> {
-  List<Category> itemList = <Category>[];
+  List<Tasks> itemList = <Tasks>[];
   int index;
   ExploreItemView(this.itemList, this.index);
   bool isFavt = false;

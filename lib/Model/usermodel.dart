@@ -14,7 +14,7 @@ class Tasks {
       this.tasks,
       this.time});
 
-  Tasks.fromJson(Map<String, dynamic> json) {
+  Tasks.fromJson(Map<dynamic,dynamic> json) {
     date = json['date'];
     email = json['email'];
     priority = json['priority'];
@@ -23,8 +23,8 @@ class Tasks {
     time = json['time'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  Map<String, dynamic>();
+  Map<dynamic, dynamic> toJson() {
+    final Map<dynamic, dynamic> data =  Map<dynamic, dynamic>();
     data['date'] = this.date;
     data['email'] = this.email;
     data['priority'] = this.priority;

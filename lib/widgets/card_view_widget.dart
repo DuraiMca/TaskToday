@@ -6,7 +6,7 @@ import 'package:tasktoday/widgets/explore_list_item.dart';
 import '../Model/usermodel.dart';
 
 class CardViewList extends StatelessWidget {
-  List<Category> itemList = <Category>[];
+  List<Tasks> itemList = <Tasks>[];
   CardViewList(this.itemList, {super.key});
 
   @override

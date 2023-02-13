@@ -17,32 +17,27 @@ class UsersData extends StatefulWidget {
 class _UsersDataState extends State<UsersData> {
   final DatabaseReference dbr =
       FirebaseDatabase.instance.ref(FirebaseAuth.instance.currentUser!.uid);
-  dynamic data;
+  dynamic? data;
+  List<Object?> workshopList = [];
 
   @override
   void initState() {
     super.initState();
-    dbr.onChildAdded.forEach((element) {
-      data = element.snapshot.child("tasks").value;
-      print(data);
-    });
-//         Map<Tasks, dynamic> castedData = data
-//             .map((key, value) => MapEntry(key.toString(), value as dynamic));
-
-//         castedData.forEach((key, value) {
-
-//             Map<String, dynamic> map = {
-//   'id': key,
-//   'tasks': value
-// };
-// List<String> keys = map.keys.toList();
-// List<dynamic> values = map.values.toList();
-
-//     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Text("");
+    dbr.onChildAdded.forEach((element) {
+      data = element.snapshot.child("tasks").value;
+      List<Object?> values = data;
+      values?.forEach((element) {
+        final json = element as Map<dynamic, dynamic>;
+        final message = Tasks.fromJson(json);
+
+        print(message.tasks);
+      });
+    });
+
+    return Text("");
   }
 }

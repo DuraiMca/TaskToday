@@ -10,9 +10,10 @@ import 'Model/usermodel.dart';
 class DataExtraction extends StatefulWidget {
  
 
-  DataExtraction({super.key});
+  const DataExtraction({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _DataExtractionState createState() => _DataExtractionState();
 }
 

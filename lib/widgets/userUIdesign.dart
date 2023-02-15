@@ -109,7 +109,7 @@ void addUserTasks(userTask,userPriorityText,userDateText,userTimeText) async{
 	    	  "date":userDateText,
 	    	  "time":userTimeText,
 	    	  "email":FirebaseAuth.instance.currentUser!.email,
-	    	  "status":"done"
+	    	  "status":"Added"
 	    	}
 	    	 
 	    	]

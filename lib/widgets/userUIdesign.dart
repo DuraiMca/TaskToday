@@ -2,7 +2,8 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterfire_ui/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import '../Screens/usersdatadisplay.dart';
+import '../Model/usermodel.dart';
+import '../data_extraction.dart';
 import 'date_widget.dart';
 import 'dropdown.dart';
 import 'textbox_widget.dart';
@@ -15,7 +16,7 @@ class UserUIDesign extends StatefulWidget {
 
 class _UserUIDesignState extends State<UserUIDesign> {
 
-
+  List<Tasks> tasks = [];
     String ? userTaskText;
     String ? userDate;
     String ? userTime;
@@ -82,9 +83,7 @@ class _UserUIDesignState extends State<UserUIDesign> {
                
             ),
            
-            SizedBox(
-             
-          child:  UsersData()),
+           DataExtraction(),
             
       ],
     )

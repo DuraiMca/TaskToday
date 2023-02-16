@@ -5,9 +5,11 @@ class Tasks {
   String? status;
   String? tasks;
   String? time;
+  String? key;
 
   Tasks(
-      {this.date,
+      {this.key,
+        this.date,
       this.email,
       this.priority,
       this.status,
@@ -15,6 +17,7 @@ class Tasks {
       this.time});
 
   Tasks.fromJson(Map<String, dynamic> json) {
+    key=json['key'];
     date = json['date'];
     email = json['email'];
     priority = json['priority'];

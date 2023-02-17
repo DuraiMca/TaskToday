@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.tasktoday</string>
+	<string>com.durai.tasktoday</string>
 	<key>PROJECT_ID</key>
 	<string>tasktoday-ca9e6</string>
 	<key>STORAGE_BUCKET</key>

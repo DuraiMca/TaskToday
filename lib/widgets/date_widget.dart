@@ -47,7 +47,7 @@ class _date_widgetState extends State<date_widget> {
               child: Row(
                 children: [
 
-                  Icon(Icons.calendar_month_outlined),
+                  const Icon(Icons.calendar_month_outlined),
                   const Text(
                     'Click to add Due Date:',
                     style: TextStyle(color: Colors.blue),

@@ -30,7 +30,13 @@ class _taskaboutState extends State<taskabout> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return GestureDetector(
+      onTap: () {
+        // Close the keyboard when the user taps outside of the text field
+        FocusScope.of(context).unfocus();
+      }, 
+    
+    child:SizedBox(
         height: 100,
         width: double.infinity,
         child: TextFormField(
@@ -50,6 +56,6 @@ class _taskaboutState extends State<taskabout> {
             fillColor: Colors.grey[200],
             prefixIcon: const Icon(Icons.work),
           ),
-        ));
+        )));
   }
 }

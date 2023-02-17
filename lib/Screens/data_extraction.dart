@@ -1,10 +1,11 @@
 import 'dart:async';
 
+import 'package:connectivity/connectivity.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import 'Model/usermodel.dart';
+import '../Model/usermodel.dart';
 
 class DataExtraction extends StatefulWidget {
   const DataExtraction({super.key});
@@ -23,12 +24,12 @@ class _DataExtractionState extends State<DataExtraction> {
   @override
   void initState() {
     super.initState();
+   
     getValues();
   }
 
   @override
   Widget build(BuildContext context) {
-    //print(tasks.length);
     return SizedBox(
       child: ListView.builder(
         physics: const NeverScrollableScrollPhysics(),
@@ -156,6 +157,7 @@ class _DataExtractionState extends State<DataExtraction> {
       });
     }).catchError((error) => print('Delete failed: $error'));
   }
+  
 
   
 }

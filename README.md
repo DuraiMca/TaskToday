@@ -1,9 +1,9 @@
 # tasktoday
 
-A new Flutter project.
+Flutter project.
 
 ## Getting Started
 
-This project is created for myself! 
+This project is created firebase Auth Ui,firebase realtime database
 
 
